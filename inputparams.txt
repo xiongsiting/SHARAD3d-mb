@@ -1,0 +1,24 @@
+WS_folder		/Users/xst/CEP-UnK
+WS_data			/Users/xst/CEP-UnK/Radargrams
+WS_result		/Users/xst/CEP-UnK/Results-mb
+WS_browse		/Users/xst/CEP-UnK/Browse-rmcl
+WS_filelist		/Users/xst/CEP-UnK/datalist.txt
+
+ROI_shapefile		/Users/xst/CEP-UnK/ROI/study-area-UnK-molaproj.shp
+
+DTM			/Users/xst/CEP-UnK/DTM/MOLA/megr00-44n090-180hb-cut.tif
+DTM_width		60e3
+
+LG_no_frequency		5
+LG_no_orientation	6
+LG_multiple_factor	3
+
+CWT_scales		2,3,4,5,6
+CWT_wavelet 		MEXH
+
+SF_dist			10
+
+PT_mintrace		10
+PT_minpts		10
+PT_sigma		3.4
+
