@@ -1,0 +1,30 @@
+subpt1 = dlmread('./subpt-1-manual.txt');
+subpt2 = dlmread('./subpt-2-manual.txt');
+subpt3 = dlmread('./subpt-3-manual.txt');
+% figure; 
+% plot3(subpt1(:,1),subpt1(:,2),-subpt1(:,4),'r.'); hold on; 
+% plot3(subpt2(:,1),subpt2(:,2),-subpt2(:,4),'g.');
+% plot3(subpt3(:,1),subpt3(:,2),-subpt3(:,4),'b.');
+% figure; 
+plot3(subpt1(:,1),subpt1(:,2),subpt1(:,3)/1000,'r.'); hold on; 
+plot3(subpt2(:,1),subpt2(:,2),subpt2(:,3)/1000,'g.');
+%plot3(subpt3(:,1),subpt3(:,2),subpt3(:,3)/1000,'b.');
+ax = gca;
+ax.XAxis.Direction = 'reverse';
+xlabel('Latitude(degrees)');
+ylabel('Longitude(degrees)');
+zlabel('Elevation (m)');
+
+pt1 = subpt1(:,1:3); pt1(:,3) = pt1(:,3)/1000;
+pt2 = subpt2(:,1:3); pt2(:,3) = pt2(:,3)/1000;
+pt3 = subpt3(:,1:3); pt3(:,3) = pt3(:,3)/1000;
+clr1 = zeros(1581,3); clr1(:,1) = 1;
+clr2 = zeros(4653,3); clr2(:,2) = 1;
+clr3 = zeros(720,3); clr3(:,3) = 1;
+ptcloud1=pointCloud(pt1,'Color',clr1);
+ptcloud2=pointCloud(pt2,'Color',clr2);
+ptcloud3=pointCloud(pt3,'Color',clr3);
+
+pcwrite(ptcloud1,'1layer.ply','Encoding','ascii');
+pcwrite(ptcloud2,'2layer.ply','Encoding','ascii');
+pcwrite(ptcloud3,'3layer.ply','Encoding','ascii');
